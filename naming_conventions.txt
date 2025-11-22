@@ -1,0 +1,99 @@
+//------------------------------------------------------------------------------
+// NOTE: Naming conventions used in this project
+//------------------------------------------------------------------------------
+// N/A         trivial local variables: i, n, a, ii, nn, aa, iii, nnn, aaa...
+//                NOTE: trivial variables must be local non-static int !!!!
+// g_          global variable
+// s_          static local variable
+// sg_         static global variable
+//------------------------------------------------------------------------------
+// i_          int
+// si_         signed int
+//  g_si_      global signed int
+//  s_si_      static signed int
+//  sg_si_     static global signed int
+// ui_         unsigned int
+// is_         short int (vs si_ for signed int)
+// sis_        signed short int
+//  sg_sis_    static global signed short int
+// uis_        unsigned short int
+// il_         long int
+// sil_        signed long int
+// uil_        unsigned long int
+// ill_        long long int
+// sill_       signed long long int
+// uill_       unsigned long long int
+//  g_uil_     global unsigned long int
+// c_          char
+// sc_         signed char
+//  g_sc_      global signed char
+// uc_         unsigned char
+// f_          float
+// d_          double
+// b_          bool
+// ui8_        uint8_t
+// ui16_       uint16_t
+// ui32_       uint32_t
+// ui64_       uint64_t
+// i8_         int8_t
+// i16_        int16_t
+// i32_        int32_t
+// i64_        int64_t
+//------------------------------------------------------------------------------
+// a_          array
+//  ga_        global array
+//  sa_        static array
+//  sga_       static global array
+//  ga_si_     global array of signed int
+//  a_c_       array of chars
+//  ga_c_      global array of chars
+// p_          pointer
+//  gp_        global pointer
+//  sp_        static pointer
+//  sgp_si_    static global pointer of signed int
+//  p_c_       pointer of char
+//  gp_c_      global pointer of char
+// pp_         pointer to a pointer
+// pf_/fp_     pointer to a file / file pointer
+//  gpf_/gfp_  global pointer to a file
+// pa_         pointer to an array
+//  gpa_i_     global pointer to an array of ints
+// ap_         array of pointers
+//------------------------------------------------------------------------------
+// t_          struct
+//  t_name_    struct of type t_name. ex: struct t_name {...} t_name_example;
+// p_t_        pointer to a struct
+//  p_t_name   pointer to a struct of type t_name
+// u_          union
+// e_          enum
+//------------------------------------------------------------------------------
+// CAPS        NOTE: use CAPS for constants, defines and typedefs
+//
+// NOTE: the constants in enums are capitalized!
+//             enum {VAR1, VAR2, VAR3, ...};
+// CAPS        define constants  ex: #define MAXVAL 100
+// M_CAPS      define macros     ex: #define M_XY(x, y) ((x) + (x) * (y))
+// H_FILENAME  used in header files to include them only once
+//             #ifndef H_FILENAME
+//                #define H_FILENAME
+//                ...
+//             #endif
+// NOTE: typedef takes the naming convention of the non typedef declaration and
+//       capitalizes it.
+//  T_         typedef struct
+//   T_NAME_   typedef struct of type t_name
+//  I_         typedef int
+//   GP_UI_    typedef global pointer to unsigned int
+//  U_         typedef union
+//  E_         typedef enum
+//------------------------------------------------------------------------------
+// NOTE: functions use the same conventions as their return type
+// i_          int function
+// p_i_        pointer to int function
+// pa_c_       pointer to array of char functions
+// v_          void function
+// _           functions intended to only be used by functions of the library
+//  _d_        (same as above) returns a double
+//  _p_i_      (same as above) returns a pointer to an int
+//------------------------------------------------------------------------------
+
