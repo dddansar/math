@@ -12,15 +12,14 @@
 //    Wrap up the project with any final processing or messaging
 //------------------------------------------------------------------------------
 // Usage:
-//    To compile: gcc -o out_file_name math.c
-//    To run: ./out_file_name [options]
+//    To compile: gcc -O3 -o math_gcc.out math.c main_functions.c
+//    To run: ./math_gcc.out [options]
 //
 // Options:
 //    -s=   Set the randomization seed, otherwise it's based on start time.
 //    -h    Prints the help message. -help, --h, and --help also work.
 //
 // Examples:
-//    gcc -o math_gcc.out math.c
 //    ./math_gcc.out
 //    ./math_gcc.out -s=123456789
 //    ./math_gcc.out -s=$RANDOM
@@ -40,14 +39,6 @@ int main(int argc, char *argv[]) {
 
    v_main_finalization();
    return 0;
-}
-
-//------------------------------------------------------------------------------
-// Function: v_main_functions
-// Isolates the main functions from v_main_initialization() and v_main_finalization()
-//------------------------------------------------------------------------------
-void v_main_functions() {
-   printf("Hello World\n");
 }
 
 //------------------------------------------------------------------------------
@@ -115,15 +106,14 @@ void v_main_initialization(int argc, char *argv[]) {
       if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "-help") == 0 || strcmp(argv[i], "--h") == 0 || strcmp(argv[i], "--help") == 0) {
          printf("---------------------------------------------------------------------------\n");
          printf("Usage:\n");
-         printf("   To compile: gcc -o out_file_name math.c\n");
-         printf("   To run: ./out_file_name [options]\n");
+         printf("   To compile: gcc -O3 -o math_gcc.out math.c main_functions.c\n");
+         printf("   To run: ./math_gcc.out [options]\n");
          printf("\n");
          printf("Options:\n");
          printf("   -s=   Set the randomization seed manually, otherwise randomization is based on start time.\n");
          printf("   -h    Prints the help message. -help, --h, and --help also work. \n");
          printf("\n");
          printf("Examples:\n");
-         printf("   gcc -o math_gcc.out math.c\n");
          printf("   ./math_gcc.out\n");
          printf("   ./math_gcc.out -s=123456789\n");
          printf("   ./math_gcc.out -s=$RANDOM\n");
@@ -143,7 +133,7 @@ void v_main_initialization(int argc, char *argv[]) {
       ui32_seed = (t_timespec_start_time).tv_nsec;
       printf("Generating random seed based on start time\n");
    } else if(i_seed_count == 1) {
-      printf("Using manual seed from arguments\n");
+      printf("Using manual seed from inputted arguments\n");
    } else {
       printf("\nERROR: Multiple seed values inputted!!!\n\n");
       exit(1); // indicates an error

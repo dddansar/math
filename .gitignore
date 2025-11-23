@@ -55,4 +55,10 @@ dkms.conf
 *.dwo
 
 # Other output files
-*.out.txt
+*.out.*
+*.s
+*.asm
+*.objdump
+*.data
+*.data.old
+
